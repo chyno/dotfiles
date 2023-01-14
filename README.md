@@ -6,4 +6,4 @@ ln -sv "~/.dotfiles/git/.gitconfig" ~
 
 
 # copy certs
-cp ~/.dotfiles/certs/*.* ~/workspace/certs
+cp ~/.dotfiles/certs/*.* ~/src/certs
