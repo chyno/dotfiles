@@ -6,7 +6,7 @@ ln -s /workspaces/.codespaces/.persistedshare/dotfiles/git/.gitconfig ~/.gitconf
 ln -s /workspaces/.codespaces/.persistedshare/dotfiles/certs ~/localcerts
 
 # Update package information
-sudo apt-get update
+sudo apt update
 
 # Install Fish Shell
-sudo apt-get install fish -y
+sudo apt install fish
