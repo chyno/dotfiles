@@ -27,3 +27,5 @@ sudo apt-get update && sudo apt-get install -y \
   libpangocairo-1.0-0 \
   libgtk-3-0 \
   libxshmfence1
+
+npm install -D @typescript/native-preview
