@@ -1,4 +1,4 @@
-echo "adding .gitconfit"
+echo "adding .gitconfig"
 # symlink of git directory to my home directory
 ln -s /workspaces/.codespaces/.persistedshare/dotfiles/git/.gitconfig ~/.gitconfig
 
