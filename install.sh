@@ -8,7 +8,7 @@ ln -s /workspaces/.codespaces/.persistedshare/dotfiles/git/.gitconfig ~/.gitconf
 # Update package information
 sudo apt update -y
 
-# Install Fish Shell
 npm install -g @github/copilot
 npm install -g @bradygaster/squad-cli
+
 
