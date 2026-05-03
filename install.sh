@@ -38,3 +38,5 @@ cat <<EOF > "$WORKSPACE_ROOT/project.code-workspace"
     "terminal.integrated.cwd": "/home/node/workspaces/apps"
   }
 }
+
+EOF
