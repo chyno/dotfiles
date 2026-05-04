@@ -1,7 +1,6 @@
-# Define your desired path
-TARGET_DIR="/home/node/workspaces/ncarb-apps"
-SQUAD_DIR="/home/node/workspaces/chynoweth-squad"
-WORKSPACE_ROOT="/home/node/workspaces"
+# Variables
+APPS_DIR="/home/node/workspace"
+PERSONAL_REPO_DIR="/home/node/chynoweth-squad"
 
 # Update package information
 sudo apt update -y
@@ -9,34 +8,14 @@ sudo apt update -y
 npm install -g @github/copilot
 npm install -g @bradygaster/squad-cli
 
-# 1. Create the parent directory
-mkdir -p "$WORKSPACE_ROOT"
-
-# 2. Move the repository from the default location to your subfolder
-# Only move if the target doesn't exist and the source DOES exist
-if [ -d "/home/node/workspace" ] && [ ! -d "$TARGET_DIR" ]; then
-    echo "Relocating repository to $TARGET_DIR..."
-    sudo mv /home/node/workspace "$TARGET_DIR"
+# 1. Clone your personal repository if not already present.
+if [ ! -d "$PERSONAL_REPO_DIR" ]; then
+  git clone https://github.com/chyno/chynoweth-squad.git "$PERSONAL_REPO_DIR"
 fi
 
-# 3. Clone your second repository (SQUAD)
-if [ ! -d "$SQUAD_DIR" ]; then
-    git clone https://github.com/chyno/chynoweth-squad.git "$SQUAD_DIR"
-fi
+# 2. Symlink the ".squad" folder (or anything else you need) from your personal repo into ncarb-apps
+ln -sf "$PERSONAL_REPO_DIR/.squad" "$APPS_DIR/.squad"
+# For more files, just replicate the ln -sf line above as needed
 
-# 4. Create the symlink for your MCP skills
-ln -sf "$SQUAD_DIR/.squad" "$TARGET_DIR/.squad"
-
-# 5. Generate the .code-workspace file
-cat <<EOF > "$WORKSPACE_ROOT/project.code-workspace"
-{
-  "folders": [
-    { "name": "Apps", "path": "ncarb-apps" },
-    { "name": "Squad Skills", "path": "chynoweth-squad" }
-  ],
-  "settings": {
-    "terminal.integrated.cwd": "/home/node/workspaces"
-  }
-}
-
-EOF
+# Let user know
+echo "Personal repo cloned and symlink created."
