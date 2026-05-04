@@ -1,5 +1,5 @@
 # Define your desired path
-TARGET_DIR="/home/node/workspaces/apps"
+TARGET_DIR="/home/node/workspaces/ncarb-apps"
 SQUAD_DIR="/home/node/workspaces/chynoweth-squad"
 WORKSPACE_ROOT="/home/node/workspaces"
 
@@ -31,11 +31,11 @@ ln -sf "$SQUAD_DIR/.squad" "$TARGET_DIR/.squad"
 cat <<EOF > "$WORKSPACE_ROOT/project.code-workspace"
 {
   "folders": [
-    { "name": "Apps", "path": "apps" },
+    { "name": "Apps", "path": "ncarb-apps" },
     { "name": "Squad Skills", "path": "chynoweth-squad" }
   ],
   "settings": {
-    "terminal.integrated.cwd": "/home/node/workspaces/apps"
+    "terminal.integrated.cwd": "/home/node/workspaces"
   }
 }
 
