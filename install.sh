@@ -16,7 +16,7 @@ mkdir -p "$WORKSPACE_ROOT"
 # Only move if the target doesn't exist and the source DOES exist
 if [ -d "/home/node/workspace" ] && [ ! -d "$TARGET_DIR" ]; then
     echo "Relocating repository to $TARGET_DIR..."
-    mv /home/node/workspace "$TARGET_DIR"
+    sudo mv /home/node/workspace "$TARGET_DIR"
 fi
 
 # 3. Clone your second repository (SQUAD)
