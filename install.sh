@@ -13,6 +13,11 @@ if [ ! -d "$PERSONAL_REPO_DIR" ]; then
   git clone https://github.com/chyno/chynoweth-squad.git "$PERSONAL_REPO_DIR"
 fi
 
+# Remove .squad in workspace if it is not a symlink
+if [ -e "$APPS_DIR/.squad" ] && [ ! -L "$APPS_DIR/.squad" ]; then
+  rm -rf "$APPS_DIR/.squad"
+fi
+
 # 2. Symlink the ".squad" folder (or anything else you need) from your personal repo into ncarb-apps
 ln -sfn "$PERSONAL_REPO_DIR/.squad" "$APPS_DIR/.squad"
 ln -sfn "$PERSONAL_REPO_DIR/.copilot" "$APPS_DIR/.copilot"
