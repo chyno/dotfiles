@@ -18,10 +18,15 @@ if [ -e "$APPS_DIR/.squad" ] && [ ! -L "$APPS_DIR/.squad" ]; then
   rm -rf "$APPS_DIR/.squad"
 fi
 
+# Exclude .squad and .copilot from tracking, locally only, for this repo in Codespaces
+echo ".squad" >> "$APPS_DIR/.git/info/exclude"
+echo ".copilot" >> "$APPS_DIR/.git/info/exclude"
+
 # 2. Symlink the ".squad" folder (or anything else you need) from your personal repo into ncarb-apps
 ln -sfn "$PERSONAL_REPO_DIR/.squad" "$APPS_DIR/.squad"
 ln -sfn "$PERSONAL_REPO_DIR/.copilot" "$APPS_DIR/.copilot"
 # For more files, just replicate the ln -sf line above as needed
+
 
 # Let user know
 echo "Personal repo cloned and symlink created."
