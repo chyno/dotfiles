@@ -15,6 +15,7 @@ fi
 
 # 2. Symlink the ".squad" folder (or anything else you need) from your personal repo into ncarb-apps
 ln -sf "$PERSONAL_REPO_DIR/.squad" "$APPS_DIR/.squad"
+ln -sf "$PERSONAL_REPO_DIR/.copilot" "$APPS_DIR/.copilot"
 # For more files, just replicate the ln -sf line above as needed
 
 # Let user know
