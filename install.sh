@@ -1,3 +1,5 @@
+ln -s /workspaces/.codespaces/.persistedshare/dotfiles/git/.gitconfig ~/.gitconfig
+
 # Variables
 APPS_DIR="/home/node/workspace"
 PERSONAL_REPO_DIR="/home/node/chynoweth-squad"
