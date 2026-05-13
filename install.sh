@@ -25,6 +25,9 @@ echo ".squad" >> "$APPS_DIR/.git/info/exclude"
 echo ".copilot" >> "$APPS_DIR/.git/info/exclude"
 echo ".github/agents/squad.agent.md" >> "$APPS_DIR/.git/info/exclude"
 
+# Ensure the agents directory exists before symlinking the agent file
+mkdir -p "$APPS_DIR/.github/agents"
+
 # 2. Symlink the ".squad" folder (or anything else you need) from your personal repo into ncarb-apps
 ln -sfn "$PERSONAL_REPO_DIR/.squad" "$APPS_DIR/.squad"
 ln -sfn "$PERSONAL_REPO_DIR/.copilot" "$APPS_DIR/.copilot"
