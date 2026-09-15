@@ -26,3 +26,8 @@ cp ~/.dotfiles/certs/*.* ~/src/certs
   flow. To force (re-)authentication explicitly:
 
      /mcp auth atlassian
+
+
+
+     start url: https://ncarbsso.awsapps.com/start
+     region: us-east-1
