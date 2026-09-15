@@ -28,6 +28,7 @@ cp ~/.dotfiles/certs/*.* ~/src/certs
      /mcp auth atlassian
 
 
-
+codespace login:
+    kiro-cli login --use-device-flow
      start url: https://ncarbsso.awsapps.com/start
      region: us-east-1
