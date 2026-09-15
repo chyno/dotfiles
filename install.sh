@@ -6,10 +6,19 @@ mkdir -p ~/.kiro/settings
 cat > ~/.kiro/settings/mcp.json <<'EOF'
 {
   "mcpServers": {
-    "atlassian-jira": {
-      "type": "http",
-      "url": "https://mcp.atlassian.com/v1/mcp"
-    }
+  
+  "atlassian": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-remote@latest",
+      "https://mcp.atlassian.com/v1/mcp",
+      "--host", "127.0.0.1",
+      "--port", "41791"
+    ],
+    "disabled": false,
+    "autoApprove": []
+  }  
   },
   "powers": {
     "mcpServers": {
