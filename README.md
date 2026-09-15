@@ -12,3 +12,17 @@ ln -sv "~/.dotfiles/git/.gitconfig" ~
 
 # copy certs
 cp ~/.dotfiles/certs/*.* ~/src/certs
+
+
+ /mcp
+
+     or
+
+     /mcp list
+
+     The Atlassian server will show ⚠ needs auth with an OAuth URL if it isn't authenticated yet.
+
+  3. Trigger authentication. In the /mcp status panel, highlight the Atlassian server and press Enter to start the OAuth
+  flow. To force (re-)authentication explicitly:
+
+     /mcp auth atlassian
